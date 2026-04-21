@@ -1,0 +1,101 @@
+{{ define "main" }}
+{{ $family := .Params.family | default "hc" }}
+{{ $chipNum := .Params.chip }}
+{{ $data := index (index hugo.Data.chips $family) $chipNum }}
+
+{{ if not $data }}
+  <div class="error">No data found for {{ $family }}/{{ $chipNum }}</div>
+{{ else }}
+
+<header class="chip-header">
+  <div class="chip-title">
+    <h1>{{ $data.name }}</h1>
+    <p class="chip-subtitle">{{ $data.title }}</p>
+  </div>
+  <div class="chip-meta">
+    <span class="badge badge-package">{{ $data.package }}</span>
+    <span class="badge badge-voltage">{{ $data.vcc_min }}V – {{ $data.vcc_max }}V</span>
+    {{ if $data.datasheet }}
+    <a class="badge badge-datasheet" href="{{ $data.datasheet }}" target="_blank" rel="noopener">Datasheet ↗</a>
+    {{ end }}
+  </div>
+</header>
+
+{{ if $data.variants }}
+<nav class="variant-nav">
+  <span class="variant-label">Variants:</span>
+  {{ range $data.variants }}
+    {{ $path := printf "/%s/%s" .family $chipNum }}
+    {{ if eq .family "hc" }}{{ $path = printf "/%s" $chipNum }}{{ end }}
+    <a class="variant-link{{ if eq .family $family }} active{{ end }}" href="{{ $path }}">{{ .name }}</a>
+  {{ end }}
+  {{/* also show current if hc */}}
+  {{ if eq $family "hc" }}
+  {{ else }}
+    <a class="variant-link" href="/{{ $chipNum }}">{{ printf "74HC%s" $chipNum }}</a>
+  {{ end }}
+</nav>
+{{ end }}
+
+<div class="chip-layout">
+
+  <section class="pinout-section">
+    <h2>Pinout</h2>
+    {{ partial "pinout-dip.html" $data }}
+  </section>
+
+  <section class="description-section">
+    <h2>Description</h2>
+    <p>{{ $data.description | markdownify }}</p>
+  </section>
+
+</div>
+
+<section class="pin-table-section">
+  <h2>Pin Descriptions</h2>
+  <table class="pin-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $data.pins }}
+      <tr class="pin-type-{{ .type }}">
+        <td class="pin-num">{{ .number }}</td>
+        <td class="pin-name"><code>{{ .name }}</code></td>
+        <td class="pin-type"><span class="type-badge type-{{ .type }}">{{ .type }}</span></td>
+        <td>{{ .description }}</td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</section>
+
+{{ if $data.truth_table }}
+<section class="truth-table-section">
+  <h2>Truth Table</h2>
+  <div class="table-scroll">
+  <table class="truth-table">
+    <thead>
+      <tr>
+        {{ range $data.truth_table.headers }}<th>{{ . }}</th>{{ end }}
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $data.truth_table.rows }}
+      <tr>
+        {{ range . }}<td>{{ . }}</td>{{ end }}
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+  </div>
+</section>
+{{ end }}
+
+{{ end }}
+{{ end }}

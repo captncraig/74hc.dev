@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ block "title" . }}{{ if .Title }}{{ .Title }} — {{ end }}{{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  {{ $css := resources.Get "css/main.css" | minify }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  <script src="/js/tooltip.js" defer></script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/" class="site-logo">74HC<span>.dev</span></a>
+    <div class="nav-links">
+      <a href="/">Chips</a>
+    </div>
+  </nav>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    <p>74HC.dev — 74-series logic IC quick reference</p>
+  </footer>
+</body>
+</html>

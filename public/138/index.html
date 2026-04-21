@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>74HC138 — 74HC.dev</title>
+  <meta name="description" content="74-series logic IC reference — pinouts, datasheets, and stock">
+  
+  <link rel="stylesheet" href="/css/main.min.css">
+  <script src="/js/tooltip.js" defer></script>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/" class="site-logo">74HC<span>.dev</span></a>
+    <div class="nav-links">
+      <a href="/">Chips</a>
+    </div>
+  </nav>
+  <main>
+    
+
+
+
+
+
+
+<header class="chip-header">
+  <div class="chip-title">
+    <h1>74HC138</h1>
+    <p class="chip-subtitle">3-to-8 Line Decoder/Demultiplexer</p>
+  </div>
+  <div class="chip-meta">
+    <span class="badge badge-package">DIP-16</span>
+    <span class="badge badge-voltage">2V – 6V</span>
+    
+    <a class="badge badge-datasheet" href="https://www.ti.com/lit/ds/symlink/cd74hc138.pdf" target="_blank" rel="noopener">Datasheet ↗</a>
+    
+  </div>
+</header>
+
+
+<nav class="variant-nav">
+  <span class="variant-label">Variants:</span>
+  
+    
+    
+    <a class="variant-link" href="/hct/138">74HCT138</a>
+  
+    
+    
+    <a class="variant-link" href="/ls/138">74LS138</a>
+  
+    
+    
+    <a class="variant-link" href="/lvs/138">74LVS138</a>
+  
+  
+  
+  
+</nav>
+
+
+<div class="chip-layout">
+
+  <section class="pinout-section">
+    <h2>Pinout</h2>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<svg class="pinout-svg" viewBox="0 0 388 328" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="74HC138 pinout diagram">
+
+  
+  <rect x="134" y="20" width="120" height="288"
+        class="chip-body" rx="4"/>
+
+  
+  
+  
+  <path d="M 184 20 A 10 10 0 0 0 204 20"
+        class="chip-notch" fill="none"/>
+
+  
+  
+  <text x="194" y="164" class="chip-label" text-anchor="middle" dominant-baseline="middle">
+    74HC138
+  </text>
+
+  
+  
+    
+    
+    
+
+    <rect x="110" y="34" width="24" height="8"
+          class="pin-rect pin-type-input" rx="1"/>
+    <text x="104" y="38" class="pin-name-svg left" text-anchor="end" dominant-baseline="middle" data-desc="Address input bit 0 (LSB)">A0</text>
+    <text x="140" y="38" class="pin-num-svg" text-anchor="start" dominant-baseline="middle">1</text>
+  
+    
+    
+    
+
+    <rect x="110" y="70" width="24" height="8"
+          class="pin-rect pin-type-input" rx="1"/>
+    <text x="104" y="74" class="pin-name-svg left" text-anchor="end" dominant-baseline="middle" data-desc="Address input bit 1">A1</text>
+    <text x="140" y="74" class="pin-num-svg" text-anchor="start" dominant-baseline="middle">2</text>
+  
+    
+    
+    
+
+    <rect x="110" y="106" width="24" height="8"
+          class="pin-rect pin-type-input" rx="1"/>
+    <text x="104" y="110" class="pin-name-svg left" text-anchor="end" dominant-baseline="middle" data-desc="Address input bit 2 (MSB)">A2</text>
+    <text x="140" y="110" class="pin-num-svg" text-anchor="start" dominant-baseline="middle">3</text>
+  
+    
+    
+    
+
+    <rect x="110" y="142" width="24" height="8"
+          class="pin-rect pin-type-enable" rx="1"/>
+    <text x="104" y="146" class="pin-name-svg left" text-anchor="end" dominant-baseline="middle" data-desc="Enable input 1, active low">~E1</text>
+    <text x="140" y="146" class="pin-num-svg" text-anchor="start" dominant-baseline="middle">4</text>
+  
+    
+    
+    
+
+    <rect x="110" y="178" width="24" height="8"
+          class="pin-rect pin-type-enable" rx="1"/>
+    <text x="104" y="182" class="pin-name-svg left" text-anchor="end" dominant-baseline="middle" data-desc="Enable input 2, active low">~E2</text>
+    <text x="140" y="182" class="pin-num-svg" text-anchor="start" dominant-baseline="middle">5</text>
+  
+    
+    
+    
+
+    <rect x="110" y="214" width="24" height="8"
+          class="pin-rect pin-type-enable" rx="1"/>
+    <text x="104" y="218" class="pin-name-svg left" text-anchor="end" dominant-baseline="middle" data-desc="Enable input 3, active high">E3</text>
+    <text x="140" y="218" class="pin-num-svg" text-anchor="start" dominant-baseline="middle">6</text>
+  
+    
+    
+    
+
+    <rect x="110" y="250" width="24" height="8"
+          class="pin-rect pin-type-output" rx="1"/>
+    <text x="104" y="254" class="pin-name-svg left" text-anchor="end" dominant-baseline="middle" data-desc="Output 7, active low">~Y7</text>
+    <text x="140" y="254" class="pin-num-svg" text-anchor="start" dominant-baseline="middle">7</text>
+  
+    
+    
+    
+
+    <rect x="110" y="286" width="24" height="8"
+          class="pin-rect pin-type-power" rx="1"/>
+    <text x="104" y="290" class="pin-name-svg left" text-anchor="end" dominant-baseline="middle" data-desc="Ground">GND</text>
+    <text x="140" y="290" class="pin-num-svg" text-anchor="start" dominant-baseline="middle">8</text>
+  
+
+  
+  
+  
+  
+    
+    
+    
+    
+
+    <rect x="254" y="286" width="24" height="8"
+          class="pin-rect pin-type-output" rx="1"/>
+    <text x="284" y="290" class="pin-name-svg right" text-anchor="start" dominant-baseline="middle" data-desc="Output 6, active low">~Y6</text>
+    <text x="248" y="290" class="pin-num-svg" text-anchor="end" dominant-baseline="middle">9</text>
+  
+    
+    
+    
+    
+
+    <rect x="254" y="250" width="24" height="8"
+          class="pin-rect pin-type-output" rx="1"/>
+    <text x="284" y="254" class="pin-name-svg right" text-anchor="start" dominant-baseline="middle" data-desc="Output 5, active low">~Y5</text>
+    <text x="248" y="254" class="pin-num-svg" text-anchor="end" dominant-baseline="middle">10</text>
+  
+    
+    
+    
+    
+
+    <rect x="254" y="214" width="24" height="8"
+          class="pin-rect pin-type-output" rx="1"/>
+    <text x="284" y="218" class="pin-name-svg right" text-anchor="start" dominant-baseline="middle" data-desc="Output 4, active low">~Y4</text>
+    <text x="248" y="218" class="pin-num-svg" text-anchor="end" dominant-baseline="middle">11</text>
+  
+    
+    
+    
+    
+
+    <rect x="254" y="178" width="24" height="8"
+          class="pin-rect pin-type-output" rx="1"/>
+    <text x="284" y="182" class="pin-name-svg right" text-anchor="start" dominant-baseline="middle" data-desc="Output 3, active low">~Y3</text>
+    <text x="248" y="182" class="pin-num-svg" text-anchor="end" dominant-baseline="middle">12</text>
+  
+    
+    
+    
+    
+
+    <rect x="254" y="142" width="24" height="8"
+          class="pin-rect pin-type-output" rx="1"/>
+    <text x="284" y="146" class="pin-name-svg right" text-anchor="start" dominant-baseline="middle" data-desc="Output 2, active low">~Y2</text>
+    <text x="248" y="146" class="pin-num-svg" text-anchor="end" dominant-baseline="middle">13</text>
+  
+    
+    
+    
+    
+
+    <rect x="254" y="106" width="24" height="8"
+          class="pin-rect pin-type-output" rx="1"/>
+    <text x="284" y="110" class="pin-name-svg right" text-anchor="start" dominant-baseline="middle" data-desc="Output 1, active low">~Y1</text>
+    <text x="248" y="110" class="pin-num-svg" text-anchor="end" dominant-baseline="middle">14</text>
+  
+    
+    
+    
+    
+
+    <rect x="254" y="70" width="24" height="8"
+          class="pin-rect pin-type-output" rx="1"/>
+    <text x="284" y="74" class="pin-name-svg right" text-anchor="start" dominant-baseline="middle" data-desc="Output 0, active low (selected when A=000)">~Y0</text>
+    <text x="248" y="74" class="pin-num-svg" text-anchor="end" dominant-baseline="middle">15</text>
+  
+    
+    
+    
+    
+
+    <rect x="254" y="34" width="24" height="8"
+          class="pin-rect pin-type-power" rx="1"/>
+    <text x="284" y="38" class="pin-name-svg right" text-anchor="start" dominant-baseline="middle" data-desc="Supply voltage">VCC</text>
+    <text x="248" y="38" class="pin-num-svg" text-anchor="end" dominant-baseline="middle">16</text>
+  
+
+</svg>
+
+  </section>
+
+  <section class="description-section">
+    <h2>Description</h2>
+    <p>The 74HC138 is a high-speed CMOS 3-to-8 line decoder/demultiplexer. It accepts a
+3-bit binary address on inputs A0–A2 and activates one of eight active-low outputs
+(Y0–Y7). Three enable inputs (E1, E2 active-low, E3 active-high) allow cascading
+and easy expansion to larger decoders.</p>
+  </section>
+
+</div>
+
+<section class="pin-table-section">
+  <h2>Pin Descriptions</h2>
+  <table class="pin-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr class="pin-type-input">
+        <td class="pin-num">1</td>
+        <td class="pin-name"><code>A0</code></td>
+        <td class="pin-type"><span class="type-badge type-input">input</span></td>
+        <td>Address input bit 0 (LSB)</td>
+      </tr>
+      
+      <tr class="pin-type-input">
+        <td class="pin-num">2</td>
+        <td class="pin-name"><code>A1</code></td>
+        <td class="pin-type"><span class="type-badge type-input">input</span></td>
+        <td>Address input bit 1</td>
+      </tr>
+      
+      <tr class="pin-type-input">
+        <td class="pin-num">3</td>
+        <td class="pin-name"><code>A2</code></td>
+        <td class="pin-type"><span class="type-badge type-input">input</span></td>
+        <td>Address input bit 2 (MSB)</td>
+      </tr>
+      
+      <tr class="pin-type-enable">
+        <td class="pin-num">4</td>
+        <td class="pin-name"><code>~E1</code></td>
+        <td class="pin-type"><span class="type-badge type-enable">enable</span></td>
+        <td>Enable input 1, active low</td>
+      </tr>
+      
+      <tr class="pin-type-enable">
+        <td class="pin-num">5</td>
+        <td class="pin-name"><code>~E2</code></td>
+        <td class="pin-type"><span class="type-badge type-enable">enable</span></td>
+        <td>Enable input 2, active low</td>
+      </tr>
+      
+      <tr class="pin-type-enable">
+        <td class="pin-num">6</td>
+        <td class="pin-name"><code>E3</code></td>
+        <td class="pin-type"><span class="type-badge type-enable">enable</span></td>
+        <td>Enable input 3, active high</td>
+      </tr>
+      
+      <tr class="pin-type-output">
+        <td class="pin-num">7</td>
+        <td class="pin-name"><code>~Y7</code></td>
+        <td class="pin-type"><span class="type-badge type-output">output</span></td>
+        <td>Output 7, active low</td>
+      </tr>
+      
+      <tr class="pin-type-power">
+        <td class="pin-num">8</td>
+        <td class="pin-name"><code>GND</code></td>
+        <td class="pin-type"><span class="type-badge type-power">power</span></td>
+        <td>Ground</td>
+      </tr>
+      
+      <tr class="pin-type-output">
+        <td class="pin-num">9</td>
+        <td class="pin-name"><code>~Y6</code></td>
+        <td class="pin-type"><span class="type-badge type-output">output</span></td>
+        <td>Output 6, active low</td>
+      </tr>
+      
+      <tr class="pin-type-output">
+        <td class="pin-num">10</td>
+        <td class="pin-name"><code>~Y5</code></td>
+        <td class="pin-type"><span class="type-badge type-output">output</span></td>
+        <td>Output 5, active low</td>
+      </tr>
+      
+      <tr class="pin-type-output">
+        <td class="pin-num">11</td>
+        <td class="pin-name"><code>~Y4</code></td>
+        <td class="pin-type"><span class="type-badge type-output">output</span></td>
+        <td>Output 4, active low</td>
+      </tr>
+      
+      <tr class="pin-type-output">
+        <td class="pin-num">12</td>
+        <td class="pin-name"><code>~Y3</code></td>
+        <td class="pin-type"><span class="type-badge type-output">output</span></td>
+        <td>Output 3, active low</td>
+      </tr>
+      
+      <tr class="pin-type-output">
+        <td class="pin-num">13</td>
+        <td class="pin-name"><code>~Y2</code></td>
+        <td class="pin-type"><span class="type-badge type-output">output</span></td>
+        <td>Output 2, active low</td>
+      </tr>
+      
+      <tr class="pin-type-output">
+        <td class="pin-num">14</td>
+        <td class="pin-name"><code>~Y1</code></td>
+        <td class="pin-type"><span class="type-badge type-output">output</span></td>
+        <td>Output 1, active low</td>
+      </tr>
+      
+      <tr class="pin-type-output">
+        <td class="pin-num">15</td>
+        <td class="pin-name"><code>~Y0</code></td>
+        <td class="pin-type"><span class="type-badge type-output">output</span></td>
+        <td>Output 0, active low (selected when A=000)</td>
+      </tr>
+      
+      <tr class="pin-type-power">
+        <td class="pin-num">16</td>
+        <td class="pin-name"><code>VCC</code></td>
+        <td class="pin-type"><span class="type-badge type-power">power</span></td>
+        <td>Supply voltage</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</section>
+
+
+<section class="truth-table-section">
+  <h2>Truth Table</h2>
+  <div class="table-scroll">
+  <table class="truth-table">
+    <thead>
+      <tr>
+        <th>E1~</th><th>E2~</th><th>E3</th><th>A2</th><th>A1</th><th>A0</th><th>Y0~</th><th>Y1~</th><th>Y2~</th><th>Y3~</th><th>Y4~</th><th>Y5~</th><th>Y6~</th><th>Y7~</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td>H</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td>
+      </tr>
+      
+      <tr>
+        <td>X</td><td>H</td><td>X</td><td>X</td><td>X</td><td>X</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td>
+      </tr>
+      
+      <tr>
+        <td>X</td><td>X</td><td>L</td><td>X</td><td>X</td><td>X</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td>
+      </tr>
+      
+      <tr>
+        <td>L</td><td>L</td><td>H</td><td>L</td><td>L</td><td>L</td><td>L</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td>
+      </tr>
+      
+      <tr>
+        <td>L</td><td>L</td><td>H</td><td>L</td><td>L</td><td>H</td><td>H</td><td>L</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td>
+      </tr>
+      
+      <tr>
+        <td>L</td><td>L</td><td>H</td><td>L</td><td>H</td><td>L</td><td>H</td><td>H</td><td>L</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td>
+      </tr>
+      
+      <tr>
+        <td>L</td><td>L</td><td>H</td><td>L</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>L</td><td>H</td><td>H</td><td>H</td><td>H</td>
+      </tr>
+      
+      <tr>
+        <td>L</td><td>L</td><td>H</td><td>H</td><td>L</td><td>L</td><td>H</td><td>H</td><td>H</td><td>H</td><td>L</td><td>H</td><td>H</td><td>H</td>
+      </tr>
+      
+      <tr>
+        <td>L</td><td>L</td><td>H</td><td>H</td><td>L</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>L</td><td>H</td><td>H</td>
+      </tr>
+      
+      <tr>
+        <td>L</td><td>L</td><td>H</td><td>H</td><td>H</td><td>L</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>L</td><td>H</td>
+      </tr>
+      
+      <tr>
+        <td>L</td><td>L</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>L</td>
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>
+</section>
+
+
+
+
+  </main>
+  <footer>
+    <p>74HC.dev — 74-series logic IC quick reference</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="home-hero">
+  <h1>74HC.dev</h1>
+  <p>Quick reference for 74-series logic ICs — pinouts, datasheets, and truth tables.</p>
+</section>
+
+<section class="chip-index">
+  <h2>Chips</h2>
+  {{ $hcChips := hugo.Data.chips.hc }}
+  {{ if $hcChips }}
+  <ul class="chip-list">
+    {{ range $num, $chip := $hcChips }}
+    <li>
+      <a href="/{{ $num }}">
+        <span class="chip-num">{{ $chip.name }}</span>
+        <span class="chip-desc">{{ $chip.title }}</span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</section>
+{{ end }}

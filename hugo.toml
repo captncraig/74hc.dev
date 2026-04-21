@@ -1,0 +1,7 @@
+baseURL = 'https://74hc.dev/'
+languageCode = 'en-us'
+title = '74HC.dev'
+
+[params]
+  defaultFamily = "hc"
+  description = "74-series logic IC reference — pinouts, datasheets, and stock"

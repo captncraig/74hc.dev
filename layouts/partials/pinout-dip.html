@@ -1,0 +1,63 @@
+{{/* Renders a DIP package pinout SVG from chip data.
+     Pins are numbered: 1..N/2 down the left side, N/2+1..N up the right side. */}}
+{{ $pins := .pins }}
+{{ $total := len $pins }}
+{{ $half := div $total 2 }}
+
+{{ $pinH := 36 }}
+{{ $chipW := 120 }}
+{{ $labelW := 110 }}
+{{ $pinLen := 24 }}
+{{ $pinW := 8 }}
+{{ $chipH := mul $half $pinH }}
+{{ $svgW := add (mul 2 $labelW) (add $chipW (mul 2 $pinLen)) }}
+{{ $svgH := add $chipH 40 }}
+{{ $chipX := add $labelW $pinLen }}
+{{ $chipY := 20 }}
+
+<svg class="pinout-svg" viewBox="0 0 {{ $svgW }} {{ $svgH }}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{{ .name }} pinout diagram">
+
+  {{/* Chip body */}}
+  <rect x="{{ $chipX }}" y="{{ $chipY }}" width="{{ $chipW }}" height="{{ $chipH }}"
+        class="chip-body" rx="4"/>
+
+  {{/* Notch at top */}}
+  {{ $notchR := 10 }}
+  {{ $notchX := add $chipX (div $chipW 2) }}
+  <path d="M {{ sub $notchX $notchR }} {{ $chipY }} A {{ $notchR }} {{ $notchR }} 0 0 0 {{ add $notchX $notchR }} {{ $chipY }}"
+        class="chip-notch" fill="none"/>
+
+  {{/* Chip name label */}}
+  {{ $midY := add $chipY (div $chipH 2) }}
+  <text x="{{ add $chipX (div $chipW 2) }}" y="{{ $midY }}" class="chip-label" text-anchor="middle" dominant-baseline="middle">
+    {{ .name }}
+  </text>
+
+  {{/* Left side pins: 1 .. half */}}
+  {{ range $i, $pin := first $half $pins }}
+    {{ $y := add $chipY (add (mul $i $pinH) (div $pinH 2)) }}
+    {{ $pinX := sub $chipX $pinLen }}
+    {{ $pinTop := sub $y (div $pinW 2) }}
+
+    <rect x="{{ $pinX }}" y="{{ $pinTop }}" width="{{ $pinLen }}" height="{{ $pinW }}"
+          class="pin-rect pin-type-{{ $pin.type }}" rx="1"/>
+    <text x="{{ sub $pinX 6 }}" y="{{ $y }}" class="pin-name-svg left" text-anchor="end" dominant-baseline="middle" data-desc="{{ $pin.description }}">{{ $pin.name }}</text>
+    <text x="{{ add $chipX 6 }}" y="{{ $y }}" class="pin-num-svg" text-anchor="start" dominant-baseline="middle">{{ $pin.number }}</text>
+  {{ end }}
+
+  {{/* Right side pins: half+1 .. total, numbered bottom to top */}}
+  {{ $rightPins := after $half $pins }}
+  {{ $rightCount := len $rightPins }}
+  {{ range $i, $pin := $rightPins }}
+    {{ $rowFromTop := sub (sub $rightCount 1) $i }}
+    {{ $y := add $chipY (add (mul $rowFromTop $pinH) (div $pinH 2)) }}
+    {{ $pinX := add $chipX $chipW }}
+    {{ $pinTop := sub $y (div $pinW 2) }}
+
+    <rect x="{{ $pinX }}" y="{{ $pinTop }}" width="{{ $pinLen }}" height="{{ $pinW }}"
+          class="pin-rect pin-type-{{ $pin.type }}" rx="1"/>
+    <text x="{{ add $pinX $pinLen 6 }}" y="{{ $y }}" class="pin-name-svg right" text-anchor="start" dominant-baseline="middle" data-desc="{{ $pin.description }}">{{ $pin.name }}</text>
+    <text x="{{ sub $pinX 6 }}" y="{{ $y }}" class="pin-num-svg" text-anchor="end" dominant-baseline="middle">{{ $pin.number }}</text>
+  {{ end }}
+
+</svg>
